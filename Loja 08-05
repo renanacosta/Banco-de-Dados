@@ -1,0 +1,120 @@
+﻿﻿-- TABELAS
+
+select * from Departamento
+select * from Funcionario
+select * from ItemVenda
+select * from NotaFiscal
+select * from Produto
+select * from Cliente
+
+--Solução dos Exercicios
+
+-- 1)
+
+-- a) Os funcionários (nome , sexo e salário) com salário maior que R$2.000.
+
+SELECT nome, sexo, salario FROM funcionario WHERE salario > 2000;
+
+--b) Os funcionários (nome, cpf) com „cadu‟ ou “carla” no nome ou no login (desconsiderar maiúsculas e minúsculas.
+
+SELECT nome, cpf from funcionario where nome ilike '%cadu%' or nome ilike '%carla%' or login ilike '%cadu%' or login ilike '%carla%';
+
+--c) Fazer o item b para os clientes comparando apenas o nome.
+
+SELECT nome, cpf from cliente where nome ilike '%maria%' or nome ilike '%rita%'
+
+--d) Unir as consultas do item b e c e m u ma única consulta.
+
+SELECT nome, cpf FROM cliente WHERE nome ilike '%maria%' or nome ilike '%rita%'
+union 
+SELECT nome, cpf FROM funcionario WHERE nome ilike '%cadu%' 
+or nome ilike '%carla%' OR login ilike '%cadu%' OR login ilike '%carla%';
+
+--e) Mostrar os diferentes codDepartamento existentes na tabela Funcionario.
+
+SELECT distinct codDepartamento from funcionario
+
+--f) Mostrar todas as informações para cliente que possuem e-mail no Hotmail ou Gmail.
+
+SELECT * FROM Cliente WHERE email ilike '%hotmail%' or  email ilike '%gmail%';
+
+-- g) Mostrar todas as informações para funcionários com salário entre 2000 e 6000 e id ade entre 20 anos e 40 anos.
+
+SELECT * FROM funcionario WHERE salario BETWEEN 2000 AND 6000 AND extract(year from age(datanascimento)) BETWEEN 20 AND 40;
+
+
+--h) Ordene os funcionários pelo sexo (crescente) caso de empate pelo salário (decrescente)
+
+SELECT nome, sexo, salario FROM funcionario order by sexo asc, salario desc;
+
+--i) Os clientes ordenados pelo nome.
+
+SELECT nome FROM cliente order by nome;
+
+--j) A média salarial e o maior e menor salário dos funcionários.
+
+SELECT avg(salario) as media, max(salario) as maximo, min(salario) as minimo FROM funcionario;
+
+--k) O item j por sexo.
+
+SELECT sexo, avg(salario) as media, max(salario) as maximo, min(salario) as minimo FROM funcionario group by sexo;
+
+--l) Os funcionários que também são clientes e que possuem salário menor que 4500. Ordene a resposta pela data 
+--   de nascimento, do mais velho para o mais novo.
+
+
+
+-- m) Os funcionários que não são clientes.
+
+
+-- n) As vendas ordenadas por data
+
+
+--o) Quantas vendas por ano.
+
+
+--p) CodProduto e total de itens vendidos ordenados pelo total vendido decrescente
+
+
+
+
+
+
+-- 2) Realize as consultas pedidas se necessário utilize Junções de tabelas.
+
+SELECT 
+
+--a) O no me dos funcionários e de seus respectivos departamentos.
+
+
+--b) Quantas diferentes pessoas (todos seus dados) existem no banco de dados (clientes e funcionários).
+
+
+--c) A méd ia salarial por sexo dos funcionários que não são clientes e têm mais de 30 anos.
+
+
+--d) O item 1.j agrupado por nome do departamento e ordenado pelo nome do departamento para funcionários do
+--   sexo masculino co m salário maior que 2000
+
+--e) A descrição dos produtos bem como o número de itens que foram vendidos, ordenado pelo número de itens que foram vendidos.
+
+
+--f) A descrição e número de vezes que cada produto foi vendido, ordenado pelo número de vezes que foi vendido.
+
+
+--g) A listas dos clientes que mais vezes co mpram na loja. No me e total de co mp ras ordenado pelo total de compras.
+
+
+--h) A lista dos funcionários que mais vendas realizaram. No me e total de vendas realizadas ordenado pelo total de compras.
+
+
+--i) A lista de dos departamentos e o total em vendas (R$) realizadas por cada departamento.
+
+
+--j) Sobre os clientes que são funcionários mostrar o nome, o total em vendas realizadas (R$) e o total em compras realizadas (R$)
+
+
+--k) O nome e a média em co mp ras (R$) para os clientes que compraram em média acima de R$30 em cada compra.
+
+
+--l) Nome do cliente, do funcionário e o total da co mpra para vendas realizadas no último mês.

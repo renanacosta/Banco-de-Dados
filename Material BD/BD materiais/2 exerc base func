@@ -1,0 +1,18 @@
+Exercícios 1: Utilize a base de dados funciońarios
+1- Insira um funcionário com nome João Matias, cpf 01243565478 e que nasceu em 28/5/1995. Ele deve trabalhar no departamento TI.
+
+2- Insira um departamento de nome P&D.
+
+3- Aloque João Matias no P&D.
+
+4- Mostre todos funcionários homens que trabalham no departamento de vendas.
+
+5- Mostre apenas o nome e cpf dos funcionários com salários entre 2000 e 10000.
+
+6- Liste o nome e idade de todos funcionários.
+
+7- Mostre todos os funcionários do departamento 03.
+ 
+8- Exclua todos funcinários com mais de 50 anos.
+
+9- Faça um aumento de 10% para todas a mulheres. 

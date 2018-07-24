@@ -1,0 +1,46 @@
+﻿-- TABELAS
+
+select * from Departamento
+select * from Funcionario
+select * from ItemVenda
+select * from NotaFiscal
+select * from Produto
+select * from Cliente
+
+--Solução dos Exercicios
+
+-- 1)
+
+-- a) Os funcionários (nome , sexo e salário) co m salário maio r que R$2.000.
+
+SELECT nome, sexo, salario * FROM cliente FROM funcionario WHERE salario > 2000;
+
+--b) Os funcionários (nome, cpf) co m „cadu‟ ou “carla” no nome ou no login (desconsiderar maiúsculas e minúsculas.
+
+SELECT nome, cpf from funcionario where nome ilike '%cadu%' or nome ilike '%carla%' or login ilike '%cadu%' or login ilike '%carla%';
+
+--c) Fazer o item b para os clientes comparando apenas o nome.
+
+SELECT nome, cpf from cliente where nome ilike '%maria%' or nome ilike '%rita%'
+
+--d) Unir as consultas do item b e c e m u ma única consulta.
+
+SELECT nome, cpf FROM cliente WHERE nome ilike '%maria%' or nome ilike '%rita%'
+union 
+SELECT nome, cpf FROM funcionario WHERE nome ilike '%cadu%' 
+or nome ilike '%carla%' OR login ilike '%cadu%' OR login ilike '%carla%';
+
+--e) Mostrar os diferentes codDepartamento existentes na tabela Funcionario.
+
+SELECT distinct codDepartamento from funcionario
+
+
+
+
+
+-- g) Mostrar todas as informações para funcionários com salário entre 2000 e 6000 e id ade entre 20 anos e 40 anos.
+
+SELECT * FROM funcionario WHERE salario BETWEEN 2000 AND 6000 AND extract(year from age(datanascimento)) BETWEEN 20 AND 40;
+
+-- 2.l
+-- nome do cliente, do funcionario

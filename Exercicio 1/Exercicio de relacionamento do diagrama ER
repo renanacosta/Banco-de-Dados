@@ -1,0 +1,19 @@
+EXERCICIO BANCO DE DADOS:
+
+REDIJA UM TEXTO EXPLICANDO O QUE O DIAGRAMA MODELA:
+
+Um cliente solicita no minimo 1, e no maximo n (várias) propostas.
+Proposta é solicitada no minimo 1, e no maximo 1  cliente.
+
+proposta se propoe ao empregado no minimo 1, e no maximo 1 proposta.
+um empregado propoe no minimo 0 (nenhuma), e no maximo n (varias) propostas.
+
+um empregado trabalha no minimo em 0 (nenhuma), e no maximo e n (varios) projetos.
+um projeto pode ser trabalhado (designado) a no minimo 1, e no maximo n (varios) empregados.
+
+o projeto sera entregue a no minimo 1, e no maximo 1 cliente.
+um cliente entrega no minimo 0 (nenhuma), e no maximo n (varios) projetos.
+
+
+
+
